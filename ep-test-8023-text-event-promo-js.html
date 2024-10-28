@@ -1,0 +1,16 @@
+<!-- Event Promo - remove end date if the same as start date -->
+<script>
+  	eventPromos = document.querySelectorAll(".event-section");
+  	if (eventPromos.length > 0) {
+      	eventPromos.forEach(function(eventPromo) {
+          	let startDate = eventPromo.querySelector('.start-date');
+            let endDate = eventPromo.querySelector('.end-date');
+          	let endDateInner = eventPromo.querySelector('.end-date .inner');
+          	if (startDate !== undefined && endDateInner !== undefined && endDateInner !== null) {
+              	if (startDate.innerText.trim() == endDateInner.innerText.trim()) {
+                  	endDate.remove(); 
+              	}
+         	}
+      	});
+  	}
+</script>
